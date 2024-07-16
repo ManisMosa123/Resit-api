@@ -1,0 +1,548 @@
+{
+	"info": {
+		"_postman_id": "0d2c79b1-a584-46c4-a8a2-e45913363863",
+		"name": "Back end development",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36928374"
+	},
+	"item": [
+		{
+			"name": "Home page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/users/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstname\": \"Mike\",\r\n  \"lastname\": \"James\",\r\n  \"email\": \"mike.james@example.com\",\r\n  \"password\": \"securepassword\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find snippet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhbGljZS5qb2huc29uQGV4YW1wbGUuY29tIiwicm9sZUlkIjoyLCJpYXQiOjE3MjA3MjkzOTIsImV4cCI6MTcyMDczMjk5Mn0.6Qvc0re16Jt-o4F59Pw8Gp6SmnMcexOKVfWiAF5b0Lk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Testing snippet\",\r\n  \"visibility\": true,\r\n  \"languageId\": 2\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/snippets/find",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"snippets",
+						"find"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post snippet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhbGljZS5qb2huc29uQGV4YW1wbGUuY29tIiwicm9sZUlkIjoyLCJpYXQiOjE3MjA3MjkzOTIsImV4cCI6MTcyMDczMjk5Mn0.6Qvc0re16Jt-o4F59Pw8Gp6SmnMcexOKVfWiAF5b0Lk",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Testing snippet\",\r\n  \"visibility\": false,\r\n  \"languageId\": 2,\r\n  \"snippet\": \"function(test){ return a * b }\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/snippets/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"snippets",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete snippet",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhbGljZS5qb2huc29uQGV4YW1wbGUuY29tIiwicm9sZUlkIjoyLCJpYXQiOjE3MjA3MjkzOTIsImV4cCI6MTcyMDczMjk5Mn0.6Qvc0re16Jt-o4F59Pw8Gp6SmnMcexOKVfWiAF5b0Lk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/snippets/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"snippets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put snippet",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhbGljZS5qb2huc29uQGV4YW1wbGUuY29tIiwicm9sZUlkIjoyLCJpYXQiOjE3MjA3MjkzOTIsImV4cCI6MTcyMDczMjk5Mn0.6Qvc0re16Jt-o4F59Pw8Gp6SmnMcexOKVfWiAF5b0Lk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Updated Snippet Name\",\r\n  \"snippet\": \"console.log('Updated Code');\",\r\n  \"visibility\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/snippets/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"snippets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get snippet by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhbGljZS5qb2huc29uQGV4YW1wbGUuY29tIiwicm9sZUlkIjoyLCJpYXQiOjE3MjA3MjkzOTIsImV4cCI6MTcyMDczMjk5Mn0.6Qvc0re16Jt-o4F59Pw8Gp6SmnMcexOKVfWiAF5b0Lk",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/snippets/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"snippets",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get snippet",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhbGljZS5qb2huc29uQGV4YW1wbGUuY29tIiwicm9sZUlkIjoyLCJpYXQiOjE3MjA3MjkzOTIsImV4cCI6MTcyMDczMjk5Mn0.6Qvc0re16Jt-o4F59Pw8Gp6SmnMcexOKVfWiAF5b0Lk",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/snippets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"snippets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Home page",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstname\": \"Mike\",\r\n  \"lastname\": \"James\",\r\n  \"email\": \"mike.james@example.com\",\r\n  \"password\": \"securepassword\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"alice.johnson@example.com\",\r\n  \"password\": \"securepassword\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get languages",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhbGljZS5qb2huc29uQGV4YW1wbGUuY29tIiwicm9sZUlkIjoyLCJpYXQiOjE3MjA3MjkzOTIsImV4cCI6MTcyMDczMjk5Mn0.6Qvc0re16Jt-o4F59Pw8Gp6SmnMcexOKVfWiAF5b0Lk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/languages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"languages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get languages bi=y ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhbGljZS5qb2huc29uQGV4YW1wbGUuY29tIiwicm9sZUlkIjoyLCJpYXQiOjE3MjA3Mjc0OTcsImV4cCI6MTcyMDczMTA5N30.D-JqxTZiMOcnbj6WqsY0576Nu2Sh5bdiE9hz12SQCv8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/languages/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"languages",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit language",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhbGljZS5qb2huc29uQGV4YW1wbGUuY29tIiwicm9sZUlkIjoyLCJpYXQiOjE3MjA3Mjc0OTcsImV4cCI6MTcyMDczMTA5N30.D-JqxTZiMOcnbj6WqsY0576Nu2Sh5bdiE9hz12SQCv8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"JavaScript\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/languages/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"languages",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post language",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhbGljZS5qb2huc29uQGV4YW1wbGUuY29tIiwicm9sZUlkIjoyLCJpYXQiOjE3MjA3MjkzOTIsImV4cCI6MTcyMDczMjk5Mn0.6Qvc0re16Jt-o4F59Pw8Gp6SmnMcexOKVfWiAF5b0Lk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"name\": \"JS\" \r\n} \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/languages/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"languages",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete language",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhbGljZS5qb2huc29uQGV4YW1wbGUuY29tIiwicm9sZUlkIjoyLCJpYXQiOjE3MjA3MjkzOTIsImV4cCI6MTcyMDczMjk5Mn0.6Qvc0re16Jt-o4F59Pw8Gp6SmnMcexOKVfWiAF5b0Lk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/languages/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"languages",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstname\": \"Mike\",\r\n  \"lastname\": \"James\",\r\n  \"email\": \"mike.james@example.com\",\r\n  \"password\": \"securepassword\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
